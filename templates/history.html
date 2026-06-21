@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>History</title>
+<style>
+body { font-family: Arial; background:#f4f6f9; margin:0; }
+
+.nav {
+    background:#1e293b;
+    padding:15px;
+}
+.nav a {
+    color:white;
+    margin-right:15px;
+    text-decoration:none;
+}
+
+.container {
+    padding:30px;
+}
+
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+table {
+    width:100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/history">History</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>History</h2>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Score</th>
+<th>Matched</th>
+<th>Missing</th>
+</tr>
+
+{% for row in data %}
+<tr>
+<td>{{row[3]}}</td>
+<td>{{row[0]}}%</td>
+<td>{{row[1]}}</td>
+<td>{{row[2]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>
